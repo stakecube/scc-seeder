@@ -78,7 +78,7 @@ class CNode {
     CAddress me(CService("0.0.0.0"));
     BeginMessage("version");
     int nBestHeight = GetRequireHeight();
-    string ver = "/ohmc-seeder:0.01/";
+    string ver = "/scc-seeder:0.01/";
     vSend << PROTOCOL_VERSION << nLocalServices << nTime << you << me << nLocalNonce << ver << nBestHeight;
     EndMessage();
   }
@@ -280,7 +280,7 @@ bool TestNode(const CService &cip, int &ban, int &clientV, std::string &clientSV
 
 /*
 int main(void) {
-  CService ip("dns.ohmc.tips", 52020, true);
+  CService ip("dns.scc.tips", 40000, true);
   vector<CAddress> vAddr;
   vAddr.clear();
   int ban = 0;

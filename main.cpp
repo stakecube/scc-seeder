@@ -35,7 +35,7 @@ public:
   CDnsSeedOpts() : nThreads(96), nDnsThreads(4), nPort(53), mbox(NULL), ns(NULL), host(NULL), tor(NULL), fUseTestNet(false), fWipeBan(false), fWipeIgnore(false), ipv4_proxy(NULL), ipv6_proxy(NULL) {}
 
   void ParseCommandLine(int argc, char **argv) {
-    static const char *help = "Ohmc-seeder\n"
+    static const char *help = "scc-seeder\n"
                               "Usage: %s -h <host> -n <ns> [-m <mbox>] [-t <threads>] [-p <port>]\n"
                               "\n"
                               "Options:\n"
@@ -397,7 +397,7 @@ extern "C" void* ThreadStats(void*) {
   return nullptr;
 }
 
-static const string mainnet_seeds[] = {"explore.ohmcoin.org", "de.ohmc.tips", "ca.ohmc.tips", "fr.ohmc.tips", "us-e1.ohmc.tips", "us-e2.ohmc.tips", ""};
+static const string mainnet_seeds[] = {"n1.stakecube.net", "n2.stakecube.net", "n3.stakecube.net", "n1.scc.tips", "n2.scc.tips", "n3.scc.tips", ""};
 static const string testnet_seeds[] = {""};
 static const string *seeds = mainnet_seeds;
 
@@ -452,10 +452,10 @@ int main(int argc, char **argv) {
   bool fDNS = true;
   if (opts.fUseTestNet) {
       printf("Using testnet.\n");
-      pchMessageStart[0] = 0x45;
-      pchMessageStart[1] = 0x76;
-      pchMessageStart[2] = 0x65;
-      pchMessageStart[3] = 0xba;
+      pchMessageStart[0] = 0xce;
+      pchMessageStart[1] = 0xe3;
+      pchMessageStart[2] = 0xca;
+      pchMessageStart[3] = 0xff;
       seeds = testnet_seeds;
       fTestNet = true;
   }
